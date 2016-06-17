@@ -1,0 +1,17 @@
+<div class="list">
+    <label class="item item-input item-floating-label">
+        <span class="input-label">User Name</span>
+        <input type="text" placeholder="User Name" ng-model="user.name">
+    </label>
+    <label class="item item-input item-floating-label">
+        <span class="input-label">Password</span>
+        <input type="text" placeholder="Password" ng-model="user.password">
+    </label>
+    <label class="item">
+        <input type="button" value="SIGN IN" class="button button-assertive button-block" ng-disabled="!user.name || !user.password" ng-click="authUser()">
+    </label>
+
+</div>
+
+
+<label ng-show="invalidLogin">Invalid Credentials</label>

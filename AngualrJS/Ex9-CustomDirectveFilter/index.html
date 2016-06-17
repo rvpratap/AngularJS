@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app="customApp">
+<head>
+	<title>Custom App</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+     <script src="app.js"></script>
+</head>
+<body ng-comtroller="customCtrl">
+  {{name | xFilter}}
+  <br>{{10 | xFilter}}
+  <br>
+  <br>  {{name | checkmark}}
+ <br>  {{10 | checkmark}}
+ <br>  {{undefined | checkmark}}
+
+ <br>
+ <print-this text="Hello"></print-this>
+</body>
+</html>
