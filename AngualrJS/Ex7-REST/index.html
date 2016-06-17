@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+     .strike {
+      text-decoration: line-through;
+     }
+    </style>
+  </head>
+  <body>
+    <h1 ng-controller="headerCtrl">To DO APP {{todos.length}}</h1>
+    <div ng-controller="todoCtrl">           
+      <input type="text" ng-model="todoText" placeholder="To Do Text" ng-keypress="addToDo($event)">  
+      <div ng-repeat="todo in todos">
+        <div ng-hide="todo.todoShowHide">
+          <input type="checkbox" ng-model="todo.isCompleted" ng-click="TodoSave(todo)">
+          <label ng-class="{strike: todo.isCompleted}">{{todo.text}}</label>
+          <input type="button" value="Edit" ng-click="TodoEdit(todo)" ng-disabled="todo.isCompleted">
+          <input type="button" value="Delete" ng-click="TodoDelete($index,todo)">
+          {{todo}}
+        </div> 
+
+        <div ng-hide="!todo.todoShowHide">
+           <input type="text" value="Change Name" ng-model="todo.text">
+           <input type="button" value="Save" ng-click="TodoSave(todo)">   
+           <input type="button" value="Cancel" ng-click="TodoCancel(todo)">
+       </div>
+
+      </div> 
+
+      
+    </div>
+
+    
+    
+  </body>
+</html>

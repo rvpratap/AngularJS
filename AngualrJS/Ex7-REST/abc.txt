@@ -1,0 +1,22 @@
+.value('RESTURL', 'http://localhost:3000/todos')
+
+.factory('todoRESRFactory', function($http, RESTURL){
+   return {
+    get: function(){
+      return $hhtp.get(RESTURL);
+    },
+    getOne: function(id){
+      return $hhtp.get(RESTURL + '/' + id);
+    },
+    post: function(todo){
+      return $hhtp.post(RESTURL, todo);
+    },
+    put: function(id, todo){
+      return $hhtp.put(RESTURL + '/' + id, todo);
+    },
+    delete: function(id){
+      return $hhtp.delete(RESTURL + '/' + id);
+    }
+   }
+
+})
